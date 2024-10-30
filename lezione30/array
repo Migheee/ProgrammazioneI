@@ -1,0 +1,44 @@
+ARRAY: insieme di valori omogenei di tipo la cui dimensione è nota a priori o almeno stimabile
+
+tipo di dato nome array [DIMENSIONE]
+    |
+    int
+    float                                  NOTA: NON usare gli array per determinare minore, maggiore per dimensione illimata. -PUNTI all'esame 
+    char                            
+
+quindi n[100] 
+        |    |   
+        0 .. 99
+
+
+#define DIM = 30
+
+int main()[
+    int a[DIM];
+    int c;
+    int max;
+    int i;
+    .
+    .
+    .
+    for(i = 0; i<DIM; i++){
+        scanf("%3d", &a[i]);   --> inizializzare array
+    }
+    
+    for(i=0; i<DIM; i++){ --> stampa array
+        printf("%3d", a[i]);
+    }
+
+    for(i=DIM; i>=0; i--){ --> stampa l'ordine inverso array
+        printf("%3d", a[i]);
+    }
+    
+    for(i=0; i<DIM; i=i+2){ --> stampa gli elementi con indice pari dell'array
+        printf("%3d", a[i]);
+    }
+
+    for(i=0; i<DIM; i++){ --> stampa elementi pari array
+        if(a[i]%2==0){
+            printf("%3d", a[i]);
+        }
+    }
