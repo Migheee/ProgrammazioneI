@@ -7,8 +7,8 @@ tipo di dato nome array [DIMENSIONE]
     char                            
 
 quindi n[100] 
-        |    |   
-        0 .. 99
+        |   |   
+        0 . 99
 
 
 #define DIM = 30
@@ -42,3 +42,8 @@ int main()[
             printf("%3d", a[i]);
         }
     }
+
+
+
+
+
