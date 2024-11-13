@@ -28,7 +28,7 @@ int main(){
                 array[i]=a+'1';
         }
         if(array[i]>='1' && array[i]<='9')
-            somma = somma + array[i]-'1' +1;
+            somma = somma + array[i]-'0';
         printf("%c", array[i]);
     }
     printf("\nsomma %d\n", somma);
