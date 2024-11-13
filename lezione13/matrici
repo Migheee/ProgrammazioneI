@@ -1,0 +1,10 @@
+Matrici ---> Tabella composta da riga e colonna
+
+
+        colonne
+        |
+int n[3][4];
+     |  
+     righe
+
+La memoria è lineare, quindi la matrice verrà visualizzata per righe
