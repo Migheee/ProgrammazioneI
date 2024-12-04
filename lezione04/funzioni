@@ -1,0 +1,48 @@
+FUNZIONI
+
+#include <stdio.h>
+int main(){
+    int n,k,fn,fk,fnk;
+    int i, cb;
+    scanf("%d %d", &n, &k);
+    for(i = 1, fn=1; i<=n; i++){
+        fn=fn*i;
+    }
+    for(i = 1, fk=1; i<=k; i++){
+        fk=fk*i;
+    }
+    for(i = 1, fkn=1; i<=n-k; i++){
+        fnk=fnk*i;
+    }
+    cb = fn/(fk*fnk);
+    printf("CB: %d\n", cb);
+    return 0;
+}
+
+Che sbatti riscrivere la stessa cosa più volte. Per questo, vengono utilizzati i sottoprogrammi/Funzione, ossia porzioni di codice che svolge una 
+particolare funzionalità
+
+#include <stdio.h>
+
+int fattoriale(int); //prototipo
+
+
+PASSAGIO PARAMETRI PER VALORE
+int main(){
+    int n,k,fn,fk,fnk;                                                          
+    int i, cb;                                                                  
+    scanf("%d %d", &n, &k);
+    fn = fattoriale(n); //invocazione della funzione.
+    fk = fattoriale(k);
+    fnk = fattoriale(nk);
+    cb = fn/(fk*fnk);
+}
+
+int fattoriale(int num){            //dentro le parentesi tonde inseriamo i parametri formale, se sono più di uno vaano separati da virgola
+    int i,r //parte dichiarativa locale al sottoprogramma
+    for(i=2, r=1; i<=num: i++){
+        r=r*i;
+    }
+    return r;
+}
+ 
