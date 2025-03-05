@@ -1,7 +1,7 @@
 /*
 Dato un numero, stampare la somma del numero e del suo inverso
 */
-
+#include <stdio.h>
 int somma(int);
 
 int main(){
