@@ -88,5 +88,6 @@ int main(){
         }
     }
     stringa5[a]='\0';
+    return 0;
 
 }
