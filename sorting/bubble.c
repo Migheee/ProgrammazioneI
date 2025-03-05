@@ -14,9 +14,8 @@ int main(){
     int array[N];
     int tmp;
     int i;
-    int dim;
-    int scambio;
-    for(i=0; i<N; i++){
+
+    for(int i=0; i<N; i++){
         scanf("%d", &array[i]);
     }
 
