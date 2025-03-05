@@ -25,7 +25,7 @@ la prima è un carattere, mentre la seconda è una stringa
 "a"--->['a', '\0']
 
 */
-#define N 31
+#define N 30
 #include <stdio.h>
 int main(){
     char stringa[30+1];
@@ -41,8 +41,7 @@ int main(){
     //nel caso in cui si voglia leggere una stringa con spazi
     int i=0;
     scanf("%c", &c);
-    while (c!='\n' && i<N)
-    {
+    while (c!='\n' && i<N){
         stringa[i]=c;
         i++;
         scanf("%c", &c);
@@ -50,4 +49,22 @@ int main(){
     stringa[i]='\0';
     //Quindi, nel seguente caso, la stringa è "ab c"
     //stringa--->['a', 'b', ' ', 'c', '\0']
+
+    //Scrivere un programma che acquisci una stringa e la restituisca al contrario
+    char stringa2[N+1];
+    char stringa3[N+1];
+    int i,n;
+    scanf("%s", stringa2);
+    for(i=0; stringa2[i]!='\0'; i++);
+    for(i=0; i<n; i++){
+        stringa3[n-i-1]=stringa2[i];
+    }
+    stringa3[n]='\0';
+    printf("%s %s\n",stringa2, stringa3);
+
+    //nella libreria string.h ci sono molte funzioni per le stringhe
+    //strlen(s) restituisce la lunghezza di s
+    //strcmo(s1, s2) restituisce 0 se le stringhe sono uguali, <0 se s1<s2, >0 se s1>s2 (in base all'ordine alfabetico)
+    //strcpy(s1, s2) copia s1 il contentuto di s2
+    //strcat(s1, s2) concatena s2 a s1
 }
