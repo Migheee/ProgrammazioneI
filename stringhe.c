@@ -25,13 +25,29 @@ la prima è un carattere, mentre la seconda è una stringa
 "a"--->['a', '\0']
 
 */
-
+#define N 31
 #include <stdio.h>
 int main(){
     char stringa[30+1];
-    scanf("%S", stringa);
+    char c;
+    scanf("%s", stringa);
+    //contare quanto è lunga una stringa
     int length;
     for(length=0; stringa[length]!='\0'; length++);
-    
-
+    printf("%d\n", length);
+    //esiste la gets(s) dove solo l'invio termina la stringa
+    //NOTA: su gcc la gets da warning
+    gets(stringa);
+    //nel caso in cui si voglia leggere una stringa con spazi
+    int i=0;
+    scanf("%c", &c);
+    while (c!='\n' && i<N)
+    {
+        stringa[i]=c;
+        i++;
+        scanf("%c", &c);
+    }
+    stringa[i]='\0';
+    //Quindi, nel seguente caso, la stringa è "ab c"
+    //stringa--->['a', 'b', ' ', 'c', '\0']
 }
