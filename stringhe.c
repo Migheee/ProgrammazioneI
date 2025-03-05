@@ -31,13 +31,16 @@ int main(){
     char stringa[30+1];
     char c;
     scanf("%s", stringa);
+
     //contare quanto è lunga una stringa
     int length;
     for(length=0; stringa[length]!='\0'; length++);
     printf("%d\n", length);
+
     //esiste la gets(s) dove solo l'invio termina la stringa
     //NOTA: su gcc la gets da warning
     gets(stringa);
+
     //nel caso in cui si voglia leggere una stringa con spazi
     int i=0;
     scanf("%c", &c);
@@ -64,7 +67,26 @@ int main(){
 
     //nella libreria string.h ci sono molte funzioni per le stringhe
     //strlen(s) restituisce la lunghezza di s
-    //strcmo(s1, s2) restituisce 0 se le stringhe sono uguali, <0 se s1<s2, >0 se s1>s2 (in base all'ordine alfabetico)
+    //strcmp(s1, s2) restituisce 0 se le stringhe sono uguali, <0 se s1<s2, >0 se s1>s2 (in base all'ordine alfabetico)
     //strcpy(s1, s2) copia s1 il contentuto di s2
     //strcat(s1, s2) concatena s2 a s1
+
+    //WHAT TO DO: provare a richiamare le funzioni della libreria string.h, scrivere gli algoritmi di queste funzioni
+    //WHAT TO DO: scrivere un programma che raddoppi le vocali di una stringa
+
+    //Scrivere un programma che acquisisca una stringa e la copia in un'altra stringa senza le vocali
+   
+    char stringa4[N+1];
+    char stringa5[N+1];
+    scanf("%s", stringa4);
+    int i,a;
+    for (i=0, a=0; i<stringa4!='\0'; i++){
+        //si faccia finta al momento che le vocali siano solo aeiou minuscole
+        if(stringa4[i]!='a' && stringa4[i]!='e' && stringa4[i]!='i' && stringa4[i]!='o' && stringa4[i]!='u'){
+            stringa5[a]=stringa4[i];
+            a++;
+        }
+    }
+    stringa5[a]='\0';
+
 }
