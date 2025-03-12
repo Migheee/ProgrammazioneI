@@ -21,3 +21,8 @@ int f(int n, int m, int* p){
     *p=n*m;
     return n+m;
 }
+
+void f2(int n, int m, int* s, int* p){
+    *s=n+m;
+    *p=n*m;
+}
