@@ -16,8 +16,6 @@ int main(){
     //come si stampa num?
     printf("%d\n", *p); //ciò a cui punta il contenuto della cella puntatore. L'asterisco si chiama operatore di dereferenziazione
     printf("%d\n", num); 
-
-    
     
     //che succede in questo caso? j e i = 5
     int i=5;
@@ -27,7 +25,6 @@ int main(){
     *p=i;
     i++;
     i=*p;
-
 
     //sono uguali?
     int *p1, *p2;
