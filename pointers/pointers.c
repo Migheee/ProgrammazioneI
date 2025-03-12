@@ -32,5 +32,19 @@ int main(){
     *p1= *p2;
     //No, il primo assegna indirizzi, invece il secondo interi.
 
+    //Correlazione tra array e puntatore
+    int a[10]; //quindi a=&a[0]; a+i=&a[i]; *(a+i)=a[i]
+    int cont=0;
+    for(int i=0; i<10; i++){
+        scanf("%d", a+i); //------> è la stessa cosa di scanf("%d", &a[i])
+    }
+
+    for(int i=0; i<10; i++){
+        if(*(a+i)%2==0){ //perchè *(a+i)=a[i]
+            cont+=1;
+        }
+    }
+
+    printf("%d", cont);
 
 }
