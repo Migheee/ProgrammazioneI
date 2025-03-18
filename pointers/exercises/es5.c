@@ -20,7 +20,7 @@ int main(){
     char stringa[N+1];
   
     int n;
-    int lunghezza;
+    int lunghezza=0;
     scanf("%s", stringa);
     do{
         scanf("%d", &n);
@@ -36,6 +36,7 @@ int main(){
     for(int i=0, a=lunghezza-n; i<n; i++,a++){
         stringa2[a]=stringa[i];
     }
+    stringa2[lunghezza]='\0';
     printf("%s", stringa2);
     return 0;
 }
