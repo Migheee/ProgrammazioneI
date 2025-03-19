@@ -35,7 +35,7 @@ switch(n){
 #define DIM 10
 
 int main(){
-    char c;
+    char c,d;
     int a[DIM]={0};
     int i;
     scanf(" %c", &c);
@@ -53,6 +53,7 @@ int main(){
             case '8': a[8]++;break;
             case '9': a[9]++;break;
         }
+        scanf("%c", &d); //Per evitare che c contenga 2 caratteri (carattere inserito e \n)
         scanf("%c", &c);
     }
     for(int i=0; i<DIM; i++){
