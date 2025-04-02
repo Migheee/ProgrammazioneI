@@ -29,7 +29,7 @@ int radice_quadrata(int num, int*res){
     while(n*n<=num){
         n++;
     }
-    *res=n-1;   //da guardare sto schifo
+    *res=n-1;  
     if(*res*(*res)==num)
         return 1;
     return 0;

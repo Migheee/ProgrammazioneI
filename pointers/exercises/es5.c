@@ -28,7 +28,7 @@ int main(){
             lunghezza++;
         } 
     }while(n<0 || n>lunghezza);
-    char stringa2[lunghezza];
+    char stringa2[N+1];
     for(int i=n, a=0; *(stringa+i)!='\0'; i++, a++){
         stringa2[a]=stringa[i];
 
