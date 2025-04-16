@@ -9,6 +9,8 @@ altrimenti.
 #include <stdio.h>
 #include <string.h>
 
+int len(char *s);
+
 int palindroma(char *, int, int);
 
 int main(){
@@ -24,4 +26,10 @@ int palindroma(char * stringa, int pos, int length){
     if(pos>=length)
         return 1;
     return palindroma(stringa,pos+1, length-1 );
+}
+
+int len(char *s){
+    if(*s=='\0')
+        return 0;
+    return 1 + len(s+1);
 }
