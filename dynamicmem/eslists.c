@@ -8,12 +8,7 @@ typedef struct elem_{
 
 elem* insersicitesta(elem*, int); //inserisce un elemento in testa alla lista
 elem* inseriscicoda(elem*, int);
-<<<<<<< HEAD
-int esiste(elem*, int); //verifica se un elemento è già presente nella lista
-elem* elimina(elem*, int); //elimina un elemento dalla lista
-=======
->>>>>>> ce1e01f7a2ae968eb8b01d664e6f192186ce46ed
-void* stampa(elem*); //stampa la lista
+void* stampa(elem*); // stampa la lista
 int trovamax(elem*); //trova il massimo della lista
 
 int main(){
@@ -63,8 +58,7 @@ elem* inseriscicoda(elem * lista, int n){
             prec->next=tmp;
         }
     }
-    return lista;
-<<<<<<< HEAD
+        return lista;
 }
 
 int esiste(elem* lista, int n){
@@ -108,7 +102,4 @@ int trovamax(elem* lista){
             max=lista->num; 
         lista=lista->next; 
     }
-    return max; 
-=======
->>>>>>> ce1e01f7a2ae968eb8b01d664e6f192186ce46ed
-}
+    return max; }
