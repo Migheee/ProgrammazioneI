@@ -39,7 +39,6 @@ void modifica(int* arr, int dim, int numtoadd){
     while(i>=0 && arr[i] > numtoadd){
         arr[i+1]=arr[i];
         i--;
-
     }
     arr[i+1]=numtoadd;
 }

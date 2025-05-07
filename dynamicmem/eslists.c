@@ -7,7 +7,11 @@ typedef struct elem_{
 } elem;
 
 elem* insersicitesta(elem*, int); //inserisce un elemento in testa alla lista
+elem* inseriscicoda(elem*, int);
+int esiste(elem*, int); //verifica se un elemento è già presente nella lista
+elem* elimina(elem*, int); //elimina un elemento dalla lista
 void* stampa(elem*); //stampa la lista
+int trovamax(elem*); //trova il massimo della lista
 
 int main(){
     int num;
@@ -38,4 +42,67 @@ void visualizza(elem* lista){
         lista=lista->next; //scorro alla prossima cella della lista
     }
     printf("\n");
+}
+
+elem* inseriscicoda(elem * lista, int n){
+    elem* tmp;
+    elem* prec; //servira dopo per raggiungere l'ultimo elemento della lista
+
+    tmp = (elem*)malloc(sizeof(elem));
+    if(tmp!=NULL){
+        tmp->num=n;
+        tmp->next=NULL;
+        
+        if(lista==NULL) //nel caso in cui la lista sia vuota
+            lista=tmp;
+        else{
+            for(prec=lista; prec->next!=NULL; prec=prec->next); //serve per raggiungere ultimo nodo
+            prec->next=tmp;
+        }
+    }
+    return lista;
+}
+
+int esiste(elem* lista, int n){
+    while(lista!=NULL && lista->num!=n){ //scorro la lista fino a quando non trovo NULL o il numero che cerco
+        lista=lista->next;
+    }
+    return (lista!=NULL); //restituisco 1 se ho trovato il numero, 0 altrimenti
+}
+
+elem* elimina(elem* lista, int n){
+    int trovato=0;
+    elem *prec, *curr, *canc;
+    curr=lista;
+    prec=NULL;
+    while(curr!=NULL && !trovato){ //scorro la lista fino a quando non trovo NULL o il numero da cancellare
+        if(curr->num==n){
+            trovato=1; 
+            canc=curr; 
+            curr=curr->next; //scorro alla prossima cella della lista
+            if(prec!= NULL){ 
+                prec->next=curr; //se il nodo da cancellare non è il primo, il nodo precedente punta al nodo successivo a quello da cancellare
+            }
+            else{ //se il nodo da cancellare è il primo
+                lista=curr;
+            }
+            free(canc); //libero la memoria del nodo da cancellare
+        }
+        else{ //se il nodo da cancellare non è il primo
+            prec=curr; //il nodo precedente diventa il nodo corrente
+            curr=curr->next; //scorro alla prossima cella della lista
+        }
+        
+    }
+    return lista; 
+}
+
+int trovamax(elem* lista){
+    int max = lista->num; //inizializzo max al primo numero della lista
+    while(lista!=NULL){ 
+        if(lista->num>max) 
+            max=lista->num; 
+        lista=lista->next; 
+    }
+    return max; 
 }
