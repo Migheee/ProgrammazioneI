@@ -29,6 +29,32 @@ int main(){
     printf("La media è: %f\n", media);
     //Devo liberare la memoria allocata con calloc, altrimenti rimane allocata fino alla chiusura del programma
     free(a); //libera la memoria allocata con malloc o calloc. Non libera la memoria allocata, ma indica che è disponibile
+
+
+    //Esiste la possibilità di riallocare la memoria dinamica che era già stata allocata con malloc o calloc, con realloc.
+    int*p, *q;
+    int i;
+    int dim;
+    scanf("%d", &dim);
+    p = (int*) malloc(dim*sizeof(int)); 
+    if(p == NULL){ 
+        printf("Errore allocazione memoria\n");
+        return 1;
+    }
+    for(i=0; i<dim; i++){
+        printf("Inserisci il numero %d: ", i+1);
+        scanf("%d", &p[i]);
+    }
+    p= realloc(p, (dim+1)*sizeof(int));
+    //sarebbe meglio usare un'altra varibaile in qunato non è detto che per la realloc ci sia abbastanza spazio7
+    q=(int*) realloc(p, (dim+1)*sizeof(int));
+    if(q != NULL){ 
+        p=q;
+    }
+    scanf("%d", &p[i]);
+    for(int i=0; i<dim+1; i++){
+        printf("%d", p[i]);
+    }
     return 0;
 
 }

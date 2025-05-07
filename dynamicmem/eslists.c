@@ -7,6 +7,7 @@ typedef struct elem_{
 } elem;
 
 elem* insersicitesta(elem*, int); //inserisce un elemento in testa alla lista
+elem* inseriscicoda(elem*, int);
 void* stampa(elem*); //stampa la lista
 
 int main(){
@@ -38,4 +39,23 @@ void visualizza(elem* lista){
         lista=lista->next; //scorro alla prossima cella della lista
     }
     printf("\n");
+}
+
+elem* inseriscicoda(elem * lista, int n){
+    elem* tmp;
+    elem* prec; //servira dopo per raggiungere l'ultimo elemento della lista
+
+    tmp = (elem*)malloc(sizeof(elem));
+    if(tmp!=NULL){
+        tmp->num=n;
+        tmp->next=NULL;
+        
+        if(lista==NULL) //nel caso in cui la lista sia vuota
+            lista=tmp;
+        else{
+            for(prec=lista; prec->next!=NULL; prec=prec->next); //serve per raggiungere ultimo nodo
+            prec->next=tmp;
+        }
+    }
+    return lista;
 }

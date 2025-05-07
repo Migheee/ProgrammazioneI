@@ -23,6 +23,7 @@ int main(){
     scanf("%s", s);
     str=crea(s);
     printf("%s", str);
+    free(str); 
     return 0;
 
 }
